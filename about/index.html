@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.12.3"><title>Faskes × Isochrone</title><meta name="keywords" content="fasilitas, kesehatan, rumah sakit, analisis, isochrone, jarak, waktu"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><base href="https://afiiif.github.io/healthcare-isochrone/"><link rel="stylesheet" href="/healthcare-isochrone/_astro/about.BkXswlHI.css">
+<style>h1{padding-bottom:.375rem;font-size:2.25rem;line-height:2.5rem;font-weight:700;--tw-text-opacity: 1;color:rgb(38 38 38 / var(--tw-text-opacity))}h2{text-wrap:balance;padding-top:2.25rem;font-size:1.25rem;line-height:1.75rem;font-weight:700;--tw-text-opacity: 1;color:rgb(38 38 38 / var(--tw-text-opacity))}p{padding-top:1.25rem}p a{--tw-text-opacity: 1;color:rgb(37 99 235 / var(--tw-text-opacity));text-decoration-line:underline;text-decoration-style:dashed}p a:hover{text-decoration-style:solid}.links a{--tw-text-opacity: 1;color:rgb(37 99 235 / var(--tw-text-opacity))}.links a:hover{text-decoration-line:underline}strong{font-weight:600}ul{list-style-type:disc;padding-left:1.25rem}@media (min-width: 640px){ul{padding-left:1.75rem}}ul li{margin-top:.625rem}ul li strong{--tw-text-opacity: 1;color:rgb(38 38 38 / var(--tw-text-opacity))}
+</style></head> <body> <header class="px-3.5 sm:px-4 border-b h-14 flex items-center"> <div class="font-semibold text-base">Faskes × Isochrone</div> <a class="ml-auto flex gap-1 items-center border rounded-md px-2 py-1 hover:bg-white focus:bg-white" href="/healthcare-isochrone">
+← Kembali
+</a> </header> <main class="max-w-2xl mx-auto px-3.5 pt-11 pb-14 md:my-4 xl:my-7 text-base text-neutral-700"> <h1>Faskes × Isochrone</h1> <div class="pb-5 text-sm text-neutral-500">Oktober 2024</div> <p> <i>Isochrone</i> adalah istilah yang digunakan dalam analisis spasial untuk menggambarkan garis
+        atau wilayah yang menghubungkan titik-titik yang dapat dicapai dalam jangka waktu yang sama dari
+        sebuah titik asal tertentu.
+</p> <p>Berikut adalah ilustrasi <i>isochrone</i>:</p> <img class="mt-4 rounded-md" src="isochrone-explained.webp" alt="isochrone explained" width="870" height="540" loading="eager"> <h2>Pemanfaatan Isochrone untuk Analisis Aksesibilitas Fasilitas Kesehatan</h2> <p>
+Dengan memanfaatkan data <i>isochrone</i> dari seluruh fasilitas kesehatan yang tersedia, kita
+        dapat menganalisa secara visual seberapa mudah penduduk di suatu area untuk mengakses fasilitas
+        kesehatan dalam waktu tertentu.
+</p> <p>Manfaat analisis <i>isochrone</i> untuk aksesibilitas fasilitas kesehatan mencakup:</p> <ul> <li> <strong>Identifikasi wilayah dengan akses yang baik</strong>:<br><i>Isochrone</i> memudahkan
+          kita untuk melihat area mana saja yang memiliki akses cepat ke layanan kesehatan, misalnya
+          dalam keadaan darurat.
+</li> <li> <strong>Penentuan lokasi fasilitas baru</strong>:<br>Analisis ini bisa digunakan oleh
+          pemerintah atau organisasi kesehatan untuk menentukan lokasi strategis bagi pembangunan
+          rumah sakit baru di area yang belum terjangkau dengan baik oleh fasilitas yang ada.
+</li> <li> <strong>Perencanaan rute transportasi</strong>:<br>Dengan melihat <i>isochrone</i>,
+          perencana transportasi dapat mengevaluasi apakah jalur transportasi umum saat ini sudah
+          memadai untuk memastikan akses ke fasilitas kesehatan.
+</li> </ul> <img class="mt-6 rounded-md" src="isochrone-healthcare-accessibility.webp" alt="isochrone for accessibility analysis" width="870" height="540" loading="lazy"> <h2>Sumber Data dan Teknologi yang Digunakan</h2> <p>
+Pada dashboard yang dikembangkan, data koordinat fasilitas kesehatan diambil dari
+<a href="https://www.openstreetmap.org">OpenStreetMap</a>
+melalui situs <a href="https://overpass-turbo.eu/">Overpass Turbo</a>. Data <i>isochrone</i>
+yang digunakan untuk analisis aksesibilitas berasal dari
+<a href="https://openrouteservice.org/">OpenRoute Service</a>, yang menyediakan <i>API</i> untuk
+        mendapatkan data <i>isochrone</i> berdasarkan waktu tempuh dengan berbagai moda transportasi,
+        seperti mobil, sepeda, atau berjalan kaki.
+</p> <h2>Hasil (<i>Dashboard</i>)</h2> <p>
+Berikut ini adalah dashboard isochrone fasilitas kesehatan berdasarkan provinsi, moda
+        transportasi, dan waktu tempuh:<br> <a href="/healthcare-isochrone" class="font-medium"> https://afiiif.github.io/healthcare-isochrone </a> </p> <h2>Keterbatasan</h2> <p>
+Meskipun <i>isochrone</i> sangat berguna, ada beberapa keterbatasan yang harus diperhatikan saat
+        menggunakan metode ini untuk analisis aksesibilitas:
+</p> <ul> <li> <strong>Asumsi Simetris Waktu Tempuh</strong>:<br>Salah satu asumsi yang sering
+          digunakan dalam analisis <i>isochrone</i> adalah bahwa
+<mark>waktu tempuh dari titik A ke B sama dengan waktu tempuh dari titik B ke A</mark>.
+          Asumsi ini tidak selalu akurat dalam situasi nyata, terutama ketika ada faktor-faktor
+          seperti jalan satu arah, perbedaan lalu lintas di jam sibuk, atau kondisi jalan yang tidak
+          merata. Dengan asumsi ini, analisis menjadi lebih sederhana, tetapi bisa mengabaikan
+          variasi signifikan dalam kenyataan.
+</li> <li> <strong>Kualitas Data</strong>:<br>Ketepatan hasil analisis <i>isochrone</i> sangat bergantung
+          pada kualitas dan keakuratan data yang digunakan, seperti kondisi jalan, kecepatan rata-rata
+          perjalanan, dan jadwal transportasi umum. Jika data tidak mutakhir atau tidak sesuai dengan
+          kondisi lapangan, hasil analisis dapat memberikan gambaran yang kurang akurat tentang aksesibilitas.
+</li> <li> <strong>Tidak Memperhitungkan Faktor Sosial dan Ekonomi</strong>:<br>Analisis
+<i>isochrone</i> hanya mempertimbangkan jarak dan waktu tempuh, dan tidak mempertimbangkan
+          faktor sosial ekonomi lain yang mungkin mempengaruhi aksesibilitas, seperti biaya transportasi,
+          kemampuan individu untuk menggunakan moda transportasi tertentu, atau hambatan fisik lainnya
+          seperti medan yang sulit.
+</li> </ul> <hr class="mt-16 mb-7"> <section class="text-sm text-right"> <div class="text-neutral-500 italic">
+Sebuah proyek kecil2an hasil kolaborasi
+<div class="inline-block links">
+—
+<a href="https://www.linkedin.com/in/ryanwjanuardi/">Ryan</a>,
+<a href="https://afiiif.github.io/">Afif</a>,
+<a href="https://www.researchgate.net/profile/Joko-Nursiyono">Joko</a> </div> </div> <div class="text-orange-400 text-xs pt-3 hidden"> <span class="italic">
+*Gambar ilustrasi oleh Afif, harap mencantumkan atribusi bila mencatutnya
+</span> 😉
+</div> </section> </main> </body></html>
